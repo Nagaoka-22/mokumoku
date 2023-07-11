@@ -14,9 +14,16 @@
           <i class="bi bi-geo-alt"></i>
           <%= event.prefecture.name %>
         </div>
-        <div>
+        <div class="d-flex">
           <i class="bi bi-calendar"></i>
           <%= l event.held_at, format: :short %>
+          <% if event.only_woman %>
+            <div class="badge-woman ml-05">
+              <span class="badge bg-primary">
+                <%= event.only_woman %>
+              </span>
+            </div>
+          <% end %>
         </div>
       </div>
       <hr />
