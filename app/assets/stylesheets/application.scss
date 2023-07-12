@@ -1,1 +1,10 @@
 @import 'theme.css';
+
+.badge-woman {
+    &.mr-05 {
+        margin-right: 0.5rem;
+    }
+    &.ml-05 {
+        margin-left: 0.5rem;;
+    }
+}
