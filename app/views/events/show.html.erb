@@ -11,7 +11,7 @@
                 </span>
               </h5>
             </div>
-            <% if @event.only_woman %>
+            <% if @event.only_woman? %>
               <div class="badge-woman mr-05">
                 <h5 class="m-0">
                   <span class="badge bg-primary">
@@ -94,7 +94,7 @@
           <div class="text-center">
             <% if logged_in? %>
               <% if !current_user.owner?(@event) %>
-                <% unless @event.only_woman and current_user.gender != "woman" %>
+                <% unless @event.only_woman? and !current_user.woman? %>
                   <% if current_user.attend?(@event) %>
                     <%= link_to 'キャンセルする',
                                 event_attendance_url(@event),
